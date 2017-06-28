@@ -9,21 +9,39 @@ and open the template in the editor.
 */
 
 body { 
-   padding-top: 50px;
+   padding-top: 80px;
 }
-.cadreCV { 
+
+/*.cadreCV { 
     background: white;
 }
+
+.jumbotron {
+    background-color: white;
+}*/
 
 /****************************************
 *              Entête du CV
 ****************************************/
 
-#cv-entete { 
-    margin-top: -45px;
+header .container-fluid{
+    background-color:#335561;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
 }
 
-#cv-photo { 
+header .container-fluid img {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+
+/*#cv-photo { 
     width: 172px;
     height: 172px;
     border-radius: 50%;
@@ -45,22 +63,28 @@ body {
     font-size: 2.4em;
     font-weight: 700;
     letter-spacing: -1px;
+    font-family: "Roboto", sans-serif;
 }
 
 #cv-intro h1 span { 
-    color: rgb(226,0,26);
+    color: #698996;
 }
 
 #cv-intro:after {
     background: url('images/ligne.png'); /* Dossier "images" est un
-sous-dossier de "css" (à créer) */
+sous-dossier de "css" (à créer) 
     width: 100%;
     height: 3px;
     margin-top: 15px;
     content: '';
     display: block;
-}
+}*/
 
+@media (max-width: 768px) {
+    header .container-fluid {
+        text-align: center;
+    }
+}
 /************************************
 *           RUBRIQUES
 *************************************/
@@ -70,17 +94,36 @@ sous-dossier de "css" (à créer) */
 }
 
 .rubrique h2 { 
-    color: rgb(226,0,26);
+    color: #335561;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
 }
 
 .rubrique h2:before{ 
     margin-right: 5px;
 }
 
-.rubrique p{ 
+.rubrique .experience {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #eee;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .rubrique .experience {
+        margin: 30px;
+    }
+}
+
+/*.rubrique p{ 
     font-size: 1.3em;
     line-height: 1.5em;
-}
+}*/
 
 /******************************************
 * Parcours scolaire
@@ -94,13 +137,13 @@ sous-dossier de "css" (à créer) */
 }
 
 #parcours:before { 
-    width: 5px;
+    width: 2px;
     height: 100%;
     position: absolute;
     left: 7.8px;
     top: 0;
     display: block;
-    background: linear-gradient(to bottom, #ffffff 0%, #E2001A 7%, #E2001A, #ffffff 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #698996 7%, #698996, #ffffff 100%);
 }
 
 #parcours li{ 
@@ -118,9 +161,8 @@ sous-dossier de "css" (à créer) */
 #parcours .date{ 
     width: 75px; 
     background-color: rgba(0, 0, 0, 0);
-    font-size: 1.5em; 
-    font-weight: 700; 
-    display: inline-block; 
+    font-size: 1.2em; 
+    display: inline-block;
 }
 
 #parcours .details{ 
@@ -128,7 +170,7 @@ sous-dossier de "css" (à créer) */
     display: inline-block; 
     background: #eee;
     position: relative; 
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 10px 10px;
     border-bottom: 1px solid #ddd; 
     margin: -8px 0 20px 0; 
 }
@@ -147,15 +189,15 @@ sous-dossier de "css" (à créer) */
     pointer-events: none; 
 }
 
-#parcours .details h3{ 
-    font-size: 1.6em; 
+#parcours .details h3{
     margin: 0; 
     padding: 0;
-    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight:600;
 }
 
 #parcours .details p{ 
-    font-size: 1.3em; 
     margin-top: 5px; 
     padding: 0; 
 }
@@ -193,66 +235,175 @@ sous-dossier de "css" (à créer) */
         width: 87%; 
     } 
 }
+@media (max-width: 500px) {
+    #parcours .date {
+        width: 25%;
+        font-size: 1em;
+    }
+    #parcours .details {
+        width: 75%;
+    }
+    #parcours .details h3 {
+        font-size: 1.2em;
+    }
+}
 
+
+/***********************************
+           COMPETENCES
+************************************/
+
+.competences {
+    text-align:center;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5em;
+}
+
+.cercle {
+    float: none !important; 
+    margin:auto !important; 
+}
+
+.competence {
+    padding: 20px;
+}
+
+@media (max-width:500px) {
+    .competence p {
+        font-size: 0.8em;
+    }
+}
+
+
+/***********************************
+            PASSIONS
+************************************/
+
+.passion {
+    background-position: center;
+    margin: auto;
+    max-height: 50px;
+    max-width: 400px;
+    text-align: right;
+    padding:10px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.7em;
+}
+
+.jeux {
+    background-image: url("../images/jeux.jpg");
+}
+
+.cinema {
+    background-image: url("../images/cinema.jpg");
+}
+
+.lecture {
+    background-image: url("../images/livres.jpg");
+}
+
+.graphisme {
+    background-image: url("../images/graphisme.jpg");
+}
+
+.passion {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.passion:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+        -webkit-filter: contrast(130%); 
+}
+
+
+/******************************************
+               LANGUES
+*******************************************/
+
+.progress {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.langue {
+    max-width: 400px;
+    margin: auto;
+}
+
+/**********************************************
+                CONTACT
+**********************************************/
+
+.contact {
+    margin-top: 40px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.1em;
+}
+
+.contact span {
+    font-weight: bold;
+    color: #6F9283;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.contact a {
+    top: 20px;
+    padding: 10px;
+    background-color: #CE574D;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition:350ms ease all;
+}
+
+.contact .bouton {
+    margin-top: 20px;
+}
+
+.contact a:hover {
+    background-color: #FC6B5F;
+    transition:350ms ease all;
+}
+
+.contact div {
+    margin-bottom: 7px;
+}
 
 /******************************************
 * Expériences professionnelles
 ******************************************/
-.experience { margin-bottom: 15px; }
-.experience .lieu { font-size: 1.4em; font-weight: bold; }
-.experience .date { font-size: 1.3em; opacity: 0.7; }
-.experience .profession { font-size: 1.6em; font-weight: bold; }
-.experience .details { font-size: 1.2em; line-height: 1.5em; }
-
-
-/******************************************
-* Me contacter
-******************************************/
-.meContacter { clear: both; }
-.meContacter .details { width: 80%; margin-left: 10px; margin-top: 3px;
-font-size: 1.5em; font-weight: 700; }
-.contact-icon { filter: grayscale(1); -webkit-filter: grayscale(1);
--moz-filter: grayscale(1); -ms-filter: grayscale(1);
--o-filter: grayscale(1); height: 32px; width: 32px;
-margin: 2px 0; }
-.meContacter a, .meContacter a:hover { text-decoration: none; color: black; }
-.meContacter a:hover>img {
-filter: grayscale(0);
--webkit-filter: grayscale(0);
--moz-filter: grayscale(0);
--ms-filter: grayscale(0);
--o-filter: grayscale(0);
+.experience { 
+    margin-bottom: 15px; 
+}
+.experience .datelieu {
+    font-size: 1.3em;
+    text-align: center;
+    padding:4px;
+}
+.experience .profession {
+    padding: 4px;
+    font-size: 1.3em;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    text-align:center;
+    font-weight: bold;
+    color: #6F9283;
+}
+.experience .details {
+    line-height: 1.5em;
+}
+@media (max-width:500px) {
+    .experience .profession {
+        font-size: 1.2em;
+    }
 }
 
-/******************************************
-* Compétences
-******************************************/
-#competences .container .libelle { float: left; font-size: 1.3em; }
-#competences .container .classement { float: right;
-background: scroll transparent url(images/Red-Rating-Stars.png) no-repeat;
-width: 160px; height: 27px; }
-#competences .container .classement0 { background-position: 0 -142px; }
-#competences .container .classement1 { background-position: 0 -112px; }
-#competences .container .classement2 { background-position: 0 -84px; }
-#competences .container .classement3 { background-position: 0 -56px; }
-#competences .container .classement4 { background-position: 0 -28px; }
-#competences .container .classement5 { background-position: 0 0px; }
 
-/******************************************
-* Langues
-******************************************/
-#langues .langue, #langues .niveau{ font-size: 1.3em; float: left; }
-#langues .langue { padding-top: 3px; }
-#langues .niveau{
-float: right;
-}
-
-/******************************************
-* Passions
-******************************************/
-.passion{ color: #fff; display: inline-block; margin-right: 5px;
-margin-bottom: 5px; padding: 5px 5px 5px 5px; background: #000;
-position: relative; font-size: 1.2em; border-radius: 10px; }
-.passion .glyphicon {
-font-size: 0.7em;
-}

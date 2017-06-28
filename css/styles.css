@@ -8,10 +8,77 @@ and open the template in the editor.
     Author     : Léo
 */
 
+body {
+    font-family: Open Sans, seris-sans;
+    cursor: default;
+    font-size: 1.3em;
+}
+
+span {
+    color: #CE574D;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+}
+
+.navbar-nav li a:hover {
+    color: #CE574D !important;
+}
+
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
 #maPhoto {
     margin-right: 10px;
 }
 
 #copyright {
     text-align: center;
+}
+
+footer {
+    color: white;
+}
+
+footer .footer-above {
+  margin-top:50px;
+  padding-top: 30px;
+  background-color: #335561;
+  padding-bottom: 30px;
+}
+
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #333;
+}
+
+.btn-social {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 2px solid white;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.btn-outline {
+    color: white;
+}
+
+.btn-social:hover {
+    border-color: #CE574D;
+}
+
+.btn-outline:hover {
+    color: #CE574D;
 }
